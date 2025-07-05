@@ -61,6 +61,23 @@ function mostFrequentMood(data) {
 }
 
 //function4
+function correlateCaffeineToFocus(data) {
+  let highcaffeinefocus = [];
+  let lowcaffeineFocus = [];
+  for (let day of data) {
+    if (day.caffeineIntake >= 2) {
+      highcaffeinefocus.push(day.focusLevel);
+    } else {
+      lowcaffeineFocus.push(day.focusLevel);
+    }
+  }
+  const avgHigh = highcaffeinefocus.reduce((a, b) => a + b, 0) / highcaffeinefocus.length || 0;
+  const avgLow = lowcaffeineFocus.reduce((a, b) => a + b, 0) / lowcaffeineFocus.length || 0;
+
+  const result = avgHigh > avgLow ? "Yes!" : "Nope!";
+  console.log(`Does more caffeine mean better focus? = ${result}`);
+  return result;
+}
 
 
 
