@@ -23,8 +23,21 @@ function findHighestScreenTime(data) {
       maxday = day;
     }
   }
-  console.log(`Most screen time: ${maxday.day} (${maxday.screenTime} hrs)`);
+  console.log(`Most screen time is ${maxday.day} (${maxday.screenTime} hrs)`);
   return maxday.day;
 }
+
+//function2
+function averageSleep(data) {
+  let total = 0;
+  for (let day of data) {
+    total += day.sleepHours;
+  }
+  let avg = total / data.length;
+  console.log(`Average sleep: ${avg.toFixed(1)} hrs`);
+  return avg;
+}
+
+//function3
 
 
