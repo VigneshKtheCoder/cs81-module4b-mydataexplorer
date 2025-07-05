@@ -15,5 +15,16 @@ Prediction: I think the best focuss day will be Wednesday because I sleep and wo
 Prediction: I predict that more caffeine might not improve focus and I think I do better with less caffeine
 */
 
+//function1
+function findHighestScreenTime(data) {
+  let maxday = data[0];
+  for (let day of data) {
+    if (day.screenTime > maxday.screenTime) {
+      maxday = day;
+    }
+  }
+  console.log(`Most screen time: ${maxday.day} (${maxday.screenTime} hrs)`);
+  return maxday.day;
+}
 
 
