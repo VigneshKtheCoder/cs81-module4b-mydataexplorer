@@ -74,10 +74,18 @@ function correlateCaffeineToFocus(data) {
   const avgHigh = highcaffeinefocus.reduce((a, b) => a + b, 0) / highcaffeinefocus.length || 0;
   const avgLow = lowcaffeineFocus.reduce((a, b) => a + b, 0) / lowcaffeineFocus.length || 0;
 
-  const result = avgHigh > avgLow ? "Yes!" : "Nope!";
+  const result = avgHigh > avgLow ? "Yep" : "Nah";
   console.log(`Does more caffeine mean better focus? = ${result}`);
   return result;
 }
+
+//fnally we can call the functions here:
+console.log("My data journal: \n");
+findHighestScreenTime(weekData);
+averageSleep(weekData);
+mostFrequentMood(weekData);
+correlateCaffeineToFocus(weekData);
+
 
 
 
