@@ -31,13 +31,37 @@ function findHighestScreenTime(data) {
 function averageSleep(data) {
   let total = 0;
   for (let day of data) {
-    total += day.sleepHours;
+    total = total + day.sleepHours;
   }
   let avg = total / data.length;
-  console.log(`Average sleep: ${avg.toFixed(1)} hrs`);
+  console.log(`Average sleep time is ${avg.toFixed(1)} hrs`);
   return avg;
 }
 
 //function3
+function mostFrequentMood(data) {
+  const moodcounts = {};
+  for (let day of data) {
+    if (!moodcounts[day.mood]) {
+      moodcounts[day.mood] = 1;
+    } else {
+      moodcounts[day.mood]++;
+    }
+  }
+  let maxmood = null;
+  let maxCount = 0;
+  for (let mood in moodcounts) {
+    if (moodcounts[mood] > maxCount) {
+      maxmood = mood;
+      maxCount = moodcounts[mood];
+    }
+  }
+  console.log(`Most frequent mood is "${maxmood}"`);
+  return maxmood;
+}
+
+//function4
+
+
 
 
